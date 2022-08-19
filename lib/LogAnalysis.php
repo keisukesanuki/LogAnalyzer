@@ -17,16 +17,6 @@ class LogAnalysis
     }
 
     /**
-     * TODO: 
-     */
-    public function thisMethodTest()
-    {
-        $command = "awk -vFdate=`echo $this->from_date` -vTdate=`echo $this->to_date` ' { if ($4 > Fdate && $4 < Tdate) print $7}' $this->name";
-        $output = shell_exec($command);
-        return $output;
-    }
-
-    /**
      * @param string $dateFieldNum
      * @param string $ipFieldNum
      * @param string $headNum
