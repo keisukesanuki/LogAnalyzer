@@ -51,6 +51,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "<input type=\"submit\" value=\"analyze\" />";
     echo "</form>";
     echo "</div>";
+
+    echo "<h4>TOP $headnum Accesses IP</h4>";
+    echo "<pre>$aggressive_ip</pre>";
+    echo "<h4>Number of Accesses</h4>";
+    echo "<pre>$get_minutes_num</pre>";
+    echo "<div>";
+    echo "<form action=\"\" method=\"GET\">";
+    echo "<input type=\"submit\" value=\"reset\" />";
+    echo "</div>";
 } else {
     echo "<div>";
     echo "<form enctype=\"multipart/form-data\" action=\"\" method=\"POST\">";
@@ -64,15 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "</form>";
     echo "</div>";   
 }
-?>
-
-<?php
-    echo "<pre>$aggressive_ip</pre>";
-    echo "<pre>$get_minutes_num</pre>";
-    echo "<div>";
-    echo "<form action=\"\" method=\"GET\">";
-    echo "<input type=\"submit\" value=\"reset\" />";
-    echo "</div>";
 ?>
 
 </body>
