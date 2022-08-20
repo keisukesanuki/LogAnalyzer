@@ -22,7 +22,7 @@ class LogAnalysis
      * @param string $headNum
      * @return string|null
      */
-    public function getAggressiveIP($dateFieldNum = "4", $anyFieldNum = "1", $headNum = "5")
+    public function getAggressiveItem($dateFieldNum = "4", $anyFieldNum = "1", $headNum = "5")
     {
         $command = "awk -vFdate=`echo $this->from_date` -vTdate=`echo $this->to_date` ' { if (\$$dateFieldNum > Fdate && \$$dateFieldNum < Tdate) print \$$anyFieldNum}' $this->name | cut -f2 | cut -d: -f2 | sort -n | uniq -c | sort -rn | head -n $headNum";
         $output = shell_exec($command);

@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $anyfield   = $_POST['anyfield'];
     $headnum   = $_POST['headnum'];
 
-    $aggressive_ip = $instance->getAggressiveIP($datefield, $anyfield, $headnum);
+    $aggressive_ip = $instance->getAggressiveItem($datefield, $anyfield, $headnum);
     $get_minutes_num = $instance->getMinutesNum($datefield);
 
     $post_fday = $_POST['fday'];
