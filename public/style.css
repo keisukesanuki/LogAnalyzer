@@ -1,4 +1,7 @@
-input.datafield { width: 30px; }
+input.datafield { 
+    width: 30px; 
+    background-color: #e0e0e0;
+}
 input.anyfield { width: 30px; }
 input.headnum { width: 30px; }
 
