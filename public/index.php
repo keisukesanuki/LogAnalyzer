@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "</form>";
     echo "</div>";
 
-    echo "<h4>TOP $headnum Aggressive Field</h4>";
+    echo "<h4>TOP $headnum Aggressive $anyfield Field</h4>";
     echo "<pre>$aggressive_ip</pre>";
     echo "<h4>Number of Accesses</h4>";
     echo "<pre>$get_minutes_num</pre>";
