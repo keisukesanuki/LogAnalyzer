@@ -31,10 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $instance = new LogAnalysis($uploadfile, $fday->format('[d/M/Y:H:i:s'), $tday->format('[d/M/Y:H:i:s'));
 
     $datefield = $_POST['datefield'];
-    $ipfield   = $_POST['ipfield'];
+    $anyfield   = $_POST['anyfield'];
     $headnum   = $_POST['headnum'];
 
-    $aggressive_ip = $instance->getAggressiveIP($datefield, $ipfield, $headnum);
+    $aggressive_ip = $instance->getAggressiveIP($datefield, $anyfield, $headnum);
     $get_minutes_num = $instance->getMinutesNum($datefield);
 
     $post_fday = $_POST['fday'];
@@ -46,13 +46,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "<input type=\"datetime-local\" name=\"fday\" value=\"$post_fday\">";
     echo "<input type=\"datetime-local\" name=\"tday\" value=\"$post_tday\">";
     echo "<input type=\"number\" name=\"datefield\" min=\"1\" value=\"$datefield\">";
-    echo "<input type=\"number\" name=\"ipfield\" min=\"1\" value=\"$ipfield\">";
+    echo "<input type=\"number\" name=\"anyfield\" min=\"1\" value=\"$anyfield\">";
     echo "<input type=\"number\" name=\"headnum\" min=\"1\" value=\"$headnum\">";
     echo "<input type=\"submit\" value=\"analyze\" />";
     echo "</form>";
     echo "</div>";
 
-    echo "<h4>TOP $headnum Accesses IP</h4>";
+    echo "<h4>TOP $headnum Aggressive Field</h4>";
     echo "<pre>$aggressive_ip</pre>";
     echo "<h4>Number of Accesses</h4>";
     echo "<pre>$get_minutes_num</pre>";
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "<input type=\"datetime-local\" name=\"fday\">";
     echo "<input type=\"datetime-local\" name=\"tday\">";
     echo "<input type=\"number\" name=\"datefield\" min=\"1\" value=\"4\">";
-    echo "<input type=\"number\" name=\"ipfield\" min=\"1\" value=\"1\">";
+    echo "<input type=\"number\" name=\"anyfield\" min=\"1\" value=\"1\">";
     echo "<input type=\"number\" name=\"headnum\" min=\"1\" value=\"5\">";
     echo "<input type=\"submit\" value=\"analyze\" />";
     echo "</form>";
