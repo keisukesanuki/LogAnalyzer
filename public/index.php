@@ -18,21 +18,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $rand_str = substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyz'), 0, 16);
         $uploadfile = $uploaddir . $rand_str;
         if (!move_uploaded_file($_FILES['logfile']['tmp_name'], $uploadfile)) {
-            echo "Possible file upload attack!\n";
+            echo "File upload has failed.\n";
         }
     } else {
-        $uploadfile = $_POST['posted'];
+        if (isset($_POST['posted'])){
+            $uploadfile = $_POST['posted'];
+        } else {
+            echo "File does not exist.\n";
+        }
     }
     
     $fday = new DateTime($_POST['fday']);
     $tday = new DateTime($_POST['tday']);
-    
-    $instance = new LogAnalysis($uploadfile, $fday->format('[d/M/Y:H:i:s'), $tday->format('[d/M/Y:H:i:s'));
 
     $datefield = $_POST['datefield'];
     $anyfield   = $_POST['anyfield'];
     $headnum   = $_POST['headnum'];
 
+    $instance = new LogAnalysis($uploadfile, $fday->format('[d/M/Y:H:i:s'), $tday->format('[d/M/Y:H:i:s'));
     $aggressive_ip = $instance->getAggressiveItem($datefield, $anyfield, $headnum);
     $get_minutes_num = $instance->getMinutesNum($datefield);
 
