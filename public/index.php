@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LogAnalyzer</title>
-  <style>
-  </style>
+  <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
 
@@ -45,9 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "<input type=\"hidden\" name=\"posted\" value=\"$uploadfile\">";
     echo "<input type=\"datetime-local\" name=\"fday\" value=\"$post_fday\">";
     echo "<input type=\"datetime-local\" name=\"tday\" value=\"$post_tday\">";
-    echo "<input type=\"number\" name=\"datefield\" min=\"1\" value=\"$datefield\">";
-    echo "<input type=\"number\" name=\"anyfield\" min=\"1\" value=\"$anyfield\">";
-    echo "<input type=\"number\" name=\"headnum\" min=\"1\" value=\"$headnum\">";
+    echo "<input type=\"number\" name=\"datefield\" min=\"1\" value=\"$datefield\" class=\"datafield\">";
+    echo "<input type=\"number\" name=\"anyfield\" min=\"1\" value=\"$anyfield\" class=\"anyfield\">";
+    echo "<input type=\"number\" name=\"headnum\" min=\"1\" value=\"$headnum\" class=\"headnum\">";
     echo "<input type=\"submit\" value=\"analyze\" />";
     echo "</form>";
     echo "</div>";
@@ -66,9 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "<input name=\"logfile\" type=\"file\" />";
     echo "<input type=\"datetime-local\" name=\"fday\">";
     echo "<input type=\"datetime-local\" name=\"tday\">";
-    echo "<input type=\"number\" name=\"datefield\" min=\"1\" value=\"4\">";
-    echo "<input type=\"number\" name=\"anyfield\" min=\"1\" value=\"1\">";
-    echo "<input type=\"number\" name=\"headnum\" min=\"1\" value=\"5\">";
+    echo "<input type=\"number\" name=\"datefield\" min=\"1\" value=\"4\" class=\"datafield\">";
+    echo "<input type=\"number\" name=\"anyfield\" min=\"1\" value=\"1\" class=\"anyfield\">";
+    echo "<input type=\"number\" name=\"headnum\" min=\"1\" value=\"5\" class=\"headnum\">";
     echo "<input type=\"submit\" value=\"analyze\" />";
     echo "</form>";
     echo "</div>";   
