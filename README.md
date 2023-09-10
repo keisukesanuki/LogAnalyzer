@@ -7,8 +7,16 @@ WEB サーバのアクセスログを解析するツールです。
 
 ## Installation
 
+- For Docker
 ```
-git clone https://github.com/keisukesanuki/LogAnalyzer.git
+git clone https://github.com/snkk1210/LogAnalyzer.git
+cd LogAnalyzer
+docker-compose up -d
+```
+
+- For LAMP server
+```
+git clone https://github.com/snkk1210/LogAnalyzer.git
 chmod 777 LogAnalyzer/upload
 ```
 
